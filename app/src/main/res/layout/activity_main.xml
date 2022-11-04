@@ -34,8 +34,10 @@
         app:theme="@style/AppSearchView"
         android:background="@drawable/searchviewstyle"/>
     <LinearLayout
+        android:id="@+id/llcontenedor"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:visibility="gone"
         android:orientation="vertical">
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_gatos"
@@ -45,5 +47,23 @@
             android:padding="2.5dp"/>
 
     </LinearLayout>
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:shimmer_auto_start="true">
+
+        <LinearLayout
+            android:id="@+id/llcargando"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <include layout="@layout/item_cargando"/>
+            <include layout="@layout/item_cargando"/>
+            <include layout="@layout/item_cargando"/>
+            <include layout="@layout/item_cargando"/>
+
+        </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
 
 </LinearLayout>

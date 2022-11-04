@@ -7,18 +7,19 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TextView;
+import android.view.View;
+import android.widget.LinearLayout;
+
 import android.widget.Toast;
 
-import com.airbnb.lottie.utils.Utils;
+
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
+
 import com.android.volley.toolbox.Volley;
 import com.pragma.catbreeds.Adapters.GatosAdapter;
 import com.pragma.catbreeds.Model.Gatos;
@@ -34,6 +35,8 @@ import java.util.List;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity{
+
+    LinearLayout llContenedor,llCargando;
     RecyclerView rvGatos;
     ArrayList<Gatos> gatosArrayList;
     RequestQueue requestQueue;
@@ -45,6 +48,8 @@ public class MainActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        llCargando = findViewById(R.id.llcargando);
+        llContenedor = findViewById(R.id.llcontenedor);
         rvGatos = findViewById(R.id.rv_gatos);
         rvGatos.setHasFixedSize(true);
         gatosArrayList = new ArrayList<>();
@@ -88,6 +93,8 @@ public class MainActivity extends AppCompatActivity{
         jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
+                llCargando.setVisibility(View.GONE);
+                llContenedor.setVisibility(View.VISIBLE);
                 LinearLayoutManager manager = new LinearLayoutManager(MainActivity.this,LinearLayoutManager.VERTICAL, false);
                 rvGatos.setLayoutManager(manager);
                 Gatos gatos = null;
