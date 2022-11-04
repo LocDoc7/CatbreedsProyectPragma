@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Catbreeds</string>
+    <string name="pais_de_origen">País de origen:</string>
+    <string name="s_inteligencia">Inteligencia:</string>
+    <string name="s_esperanza_de_vida">Esperanza de vida:</string>
+    <string name="s_mas">Más...</string>
+    <string name="s_nombre_raza">Nombre Raza</string>
+    <string name="s_temperamento">Temperamento: </string>
+    <string name="s_adaptabilidad">Adaptabilidad: </string>
+    <string name="s_esperanza">Esperanza de vida: </string>
+    <string name="s_niveafecto">Nivel de afecto: </string>
+    <string name="s_nivelenergia">Nivel de energia: </string>
+    <string name="s_no_hay_datos">No se encontraron resultados</string>
+</resources>
