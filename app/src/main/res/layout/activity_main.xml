@@ -44,7 +44,7 @@
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="2.5dp"/>
+            android:paddingHorizontal="2.5dp"/>
 
     </LinearLayout>
     <com.facebook.shimmer.ShimmerFrameLayout
